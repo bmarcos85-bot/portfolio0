@@ -24,7 +24,7 @@
 
     /* GLASS CONTAINER */
     .glass-container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 40px auto;
       padding: 40px;
       background: rgba(255, 255, 255, 0.12);
@@ -38,10 +38,10 @@
       margin-bottom: 25px;
     }
 
-    /* GRID LAYOUT (L SHAPE) */
+    /* LAYOUT */
     .layout {
       display: grid;
-      grid-template-columns: auto 1fr; /* auto adjusts to image size */
+      grid-template-columns: auto 1fr;
       grid-template-rows: auto auto;
       gap: 20px;
       align-items: start;
@@ -67,11 +67,12 @@
       flex-wrap: wrap;
     }
 
-    /* 🔥 KEY CHANGE: NO FIXED SIZE */
+    /* ✅ IMAGE STYLE (SMALL + FULL IMAGE VISIBLE) */
     img {
-      height: auto;
-      width: auto;
-      max-width: 100%; /* prevents overflow */
+      width: 220px;
+      height: 160px;
+      object-fit: contain; /* shows full image */
+      background: black;   /* fills empty space */
       border: 3px solid red;
       border-radius: 10px;
     }
@@ -85,6 +86,11 @@
 
       .bottom-images {
         justify-content: center;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   </style>
