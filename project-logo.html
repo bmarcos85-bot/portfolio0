@@ -9,16 +9,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: white;
-    }
-
-    /* BACKGROUND */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(20,0,0,0.7)),
-        url("your-background.jpg") center/cover no-repeat;
-      z-index: -1;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(20,0,0,0.9));
     }
 
     a {
@@ -33,7 +24,7 @@
 
     /* GLASS CONTAINER */
     .glass-container {
-      max-width: 1300px; /* wider */
+      max-width: 1200px;
       margin: 40px auto;
       padding: 40px;
       background: rgba(255, 255, 255, 0.12);
@@ -47,19 +38,20 @@
       margin-bottom: 25px;
     }
 
-    /* GRID */
+    /* GRID LAYOUT (L SHAPE) */
     .layout {
       display: grid;
-      grid-template-columns: 320px 1fr; /* BIGGER LEFT */
+      grid-template-columns: auto 1fr; /* auto adjusts to image size */
       grid-template-rows: auto auto;
-      gap: 25px;
+      gap: 20px;
+      align-items: start;
     }
 
-    /* LEFT */
+    /* LEFT IMAGES */
     .left-images {
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: 20px;
     }
 
     /* TEXT */
@@ -68,20 +60,20 @@
       font-size: 1.1rem;
     }
 
-    /* BOTTOM */
+    /* BOTTOM IMAGES */
     .bottom-images {
       display: flex;
-      gap: 25px;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    /* MUCH BIGGER IMAGES */
-    .left-images img,
-    .bottom-images img {
-      width: 320px;
-      height: 240px;
-      object-fit: cover;
+    /* 🔥 KEY CHANGE: NO FIXED SIZE */
+    img {
+      height: auto;
+      width: auto;
+      max-width: 100%; /* prevents overflow */
       border: 3px solid red;
-      border-radius: 12px;
+      border-radius: 10px;
     }
 
     @media (max-width: 768px) {
@@ -92,13 +84,7 @@
       }
 
       .bottom-images {
-        flex-direction: column;
-      }
-
-      .left-images img,
-      .bottom-images img {
-        width: 100%;
-        height: auto;
+        justify-content: center;
       }
     }
   </style>
