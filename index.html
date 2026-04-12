@@ -130,6 +130,8 @@
       overflow: hidden;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+      display: block;
     }
 
     .project-card:hover {
@@ -152,76 +154,6 @@
       font-size: 1.1rem;
     }
 
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.82);
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      padding: 20px;
-    }
-
-    .modal-content {
-      background: #111;
-      border: 2px solid #ff0000;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 700px;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
-      animation: fadeIn 0.25s ease;
-    }
-
-    .modal-content img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .modal-text {
-      padding: 24px;
-    }
-
-    .modal-text h3 {
-      color: #ffcc00;
-      margin-bottom: 12px;
-      font-size: 1.7rem;
-    }
-
-    .modal-text p {
-      color: #f3f3f3;
-      line-height: 1.6;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 18px;
-      right: 24px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-      z-index: 2100;
-    }
-
-    .close-btn:hover {
-      color: #ffcc00;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2.8rem;
@@ -235,10 +167,6 @@
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-      }
-
-      .modal-content img {
-        height: 220px;
       }
     }
   </style>
@@ -266,63 +194,32 @@
     <h2>Featured Projects</h2>
 
     <div class="project-grid">
-      <div class="project-card" onclick="openModal('Logo', 'logo-project.jpg', 'This is where you can describe your Logo project.')">
+      <a href="project-logo.html" class="project-card">
         <img src="iliaa.jpg" alt="Logo Project">
         <h3>Logo</h3>
-      </div>
+      </a>
 
-      <div class="project-card" onclick="openModal('Glitch Art', 'glitch-art.jpg', 'This is where you can describe your Glitch Art project.')">
+      <a href="project-glitch-art.html" class="project-card">
         <img src="Brainsucculenooot.png" alt="Glitch Art Project">
         <h3>Glitch Art</h3>
-      </div>
+      </a>
 
-      <div class="project-card" onclick="openModal('Meme Mashup', 'meme-mashup.jpg', 'This is where you can describe your Meme Mashup project.')">
+      <a href="project-meme-mashup.html" class="project-card">
         <img src="grassy.jpg" alt="Meme Mashup Project">
         <h3>Meme Mashup</h3>
-      </div>
+      </a>
 
-      <div class="project-card" onclick="openModal('Virtual Space', 'virtual-space.jpg', 'This is where you can describe your Virtual Space project.')">
+      <a href="project-virtual-space.html" class="project-card">
         <img src="DeskScenerender.png" alt="Virtual Space Project">
         <h3>Virtual Space</h3>
-      </div>
+      </a>
 
-      <div class="project-card" onclick="openModal('Net Art', 'net-art.jpg', 'This is where you can describe your Net Art project.')">
+      <a href="project-net-art.html" class="project-card">
         <img src="net-art.jpg" alt="Net Art Project">
         <h3>Net Art</h3>
-      </div>
+      </a>
     </div>
   </section>
-
-  <div class="modal" id="projectModal">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-      <img id="modalImage" src="" alt="Project Image">
-      <div class="modal-text">
-        <h3 id="modalTitle"></h3>
-        <p id="modalDescription"></p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function openModal(title, image, description) {
-      document.getElementById("modalTitle").textContent = title;
-      document.getElementById("modalImage").src = image;
-      document.getElementById("modalDescription").textContent = description;
-      document.getElementById("projectModal").style.display = "flex";
-    }
-
-    function closeModal() {
-      document.getElementById("projectModal").style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById("projectModal");
-      if (event.target === modal) {
-        closeModal();
-      }
-    };
-  </script>
 
 </body>
 </html>
