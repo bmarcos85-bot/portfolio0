@@ -33,7 +33,7 @@
 
     /* WHITE GLASS */
     .glass-container {
-      max-width: 900px;
+      max-width: 1100px; /* bigger container */
       margin: 40px auto;
       padding: 30px;
       background: rgba(255, 255, 255, 0.12);
@@ -50,18 +50,18 @@
     /* GRID LAYOUT */
     .layout {
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 240px 1fr; /* bigger left column */
       grid-template-rows: auto auto;
-      gap: 15px;
+      gap: 20px;
     }
 
-    /* LEFT COLUMN (2 stacked images) */
+    /* LEFT COLUMN */
     .left-images {
       grid-column: 1;
       grid-row: 1;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
     }
 
     /* TEXT */
@@ -69,24 +69,25 @@
       grid-column: 2;
       grid-row: 1;
       line-height: 1.6;
+      font-size: 1.05rem;
     }
 
-    /* BOTTOM ROW (2 images under text ONLY) */
+    /* BOTTOM ROW */
     .bottom-images {
       grid-column: 2;
       grid-row: 2;
       display: flex;
-      gap: 15px;
+      gap: 20px;
     }
 
-    /* IMAGE STYLE (ALL SAME SIZE) */
+    /* BIGGER IMAGE SIZE */
     .left-images img,
     .bottom-images img {
-      width: 160px;
-      height: 120px;
+      width: 240px;
+      height: 180px;
       object-fit: cover;
       border: 2px solid red;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     @media (max-width: 768px) {
@@ -120,9 +121,9 @@
 
   <div class="layout">
 
-    <!-- LEFT (vertical part of L) -->
+    <!-- LEFT -->
     <div class="left-images">
-      <img src="iliaa.pdf">
+      <img src="iliaa.jpg">
       <img src="ilialogoG.jpg">
     </div>
 
@@ -130,18 +131,18 @@
     <div class="text-box">
       <p>
         This is the logo I created for my favorite MMA fighter Ilia Topuria.
-        I took ispiration from his tattoos plus nickname: El Matador, 
+        I took inspiration from his tattoos plus nickname: El Matador, 
         to create a design that expresses my artistic style and showcases his cool brand.
         I see this logo being used for merchandise or training gear for Ilia and his team.
       </p>
 
       <p>
-        I created this on Adobe Illustrator where I took a few of the tattos that he has and changed them up into my own style
-      </p>
+        I created this on Adobe Illustrator where I took a few of the tattoos that he has 
+        and changed them up into my own style.
       </p>
     </div>
 
-    <!-- BOTTOM (horizontal part of L) -->
+    <!-- BOTTOM -->
     <div class="bottom-images">
       <img src="ilialogor.jpg">
       <img src="ilia back.jpeg">
