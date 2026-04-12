@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logo Project</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
+
+    /* BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(20,0,0,0.7)),
+        url("your-background.jpg") center/cover no-repeat;
+      z-index: -1;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: yellow;
+    }
+
+    /* WHITE GLASS */
+    .glass-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      color: yellow;
+      margin-bottom: 20px;
+    }
+
+    /* GRID LAYOUT */
+    .layout {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      grid-template-rows: auto auto;
+      gap: 15px;
+    }
+
+    /* LEFT COLUMN (2 stacked images) */
+    .left-images {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    /* TEXT */
+    .text-box {
+      grid-column: 2;
+      grid-row: 1;
+      line-height: 1.6;
+    }
+
+    /* BOTTOM ROW (2 images under text ONLY) */
+    .bottom-images {
+      grid-column: 2;
+      grid-row: 2;
+      display: flex;
+      gap: 15px;
+    }
+
+    /* IMAGE STYLE (ALL SAME SIZE) */
+    .left-images img,
+    .bottom-images img {
+      width: 160px;
+      height: 120px;
+      object-fit: cover;
+      border: 2px solid red;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .bottom-images {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left-images img,
+      .bottom-images img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="glass-container">
+
+  <a href="index.html">← Back to Portfolio</a>
+
+  <h1>Logo Project</h1>
+
+  <div class="layout">
+
+    <!-- LEFT (vertical part of L) -->
+    <div class="left-images">
+      <img src="logo1.jpg">
+      <img src="logo2.jpg">
+    </div>
+
+    <!-- TEXT -->
+    <div class="text-box">
+      <p>
+        This project explores logo design and visual identity. I created multiple
+        versions to experiment with composition, color, and style.
+      </p>
+
+      <p>
+        Tools used: Photoshop, Illustrator (edit this)
+      </p>
+
+      <p>
+        Concept: Explain your idea here.
+      </p>
+    </div>
+
+    <!-- BOTTOM (horizontal part of L) -->
+    <div class="bottom-images">
+      <img src="logo3.jpg">
+      <img src="extra-image.jpg">
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
