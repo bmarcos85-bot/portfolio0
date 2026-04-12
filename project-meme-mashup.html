@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Mashup</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
+
+    /* BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(20, 0, 0, 0.7)),
+        url("your-background.jpg") center/cover no-repeat;
+      z-index: -1;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: yellow;
+    }
+
+    .page-wrap {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* IMAGE PANEL */
+    .image-panel {
+      position: relative;
+      width: 100%;
+      min-height: 700px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background:
+        url("grassy.jpg") center/cover no-repeat;
+    }
+
+    /* TITLE AT TOP */
+    .title {
+      position: absolute;
+      top: 25px;
+      left: 30px;
+      z-index: 2;
+      font-size: 2.5rem;
+      color: yellow;
+      text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+
+    /* TEXT BOTTOM RIGHT */
+    .description {
+      position: absolute;
+      bottom: 25px;
+      right: 30px;
+      z-index: 2;
+      max-width: 400px;
+      line-height: 1.6;
+      text-align: right;
+      text-shadow: 0 0 10px rgba(0,0,0,0.9);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .image-panel {
+        min-height: 550px;
+      }
+
+      .title {
+        font-size: 2rem;
+      }
+
+      .description {
+        left: 20px;
+        right: 20px;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-wrap">
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+    <div class="image-panel">
+
+      <div class="title">Meme Mashup</div>
+
+      <div class="description">
+        <p>
+        This is my Meme Mashup project. In this project I used a few of my favorite popular meme formats
+          an merged them together to create a meme
+        </p>
+
+        <p>
+          For this project I used Photoshop, where I took out the background and adjusted the colors 
+          to make the images fit toghter for a single meme.
+        </p>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
