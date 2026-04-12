@@ -9,7 +9,17 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: white;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(20,0,0,0.9));
+    }
+
+    /* 🔥 BACKGROUND IMAGE (EDIT THIS) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(20,0,0,0.9)),
+        url("IMG_1076.JPG") center/cover no-repeat;
+      z-index: -1;
     }
 
     a {
@@ -67,12 +77,12 @@
       flex-wrap: wrap;
     }
 
-    /* ✅ IMAGE STYLE (SMALL + FULL IMAGE VISIBLE) */
+    /* IMAGE STYLE */
     img {
       width: 220px;
       height: 160px;
-      object-fit: contain; /* shows full image */
-      background: black;   /* fills empty space */
+      object-fit: contain;
+      background: black;
       border: 3px solid red;
       border-radius: 10px;
     }
