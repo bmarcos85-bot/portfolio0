@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Space</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
+
+    /* PAGE BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(20, 0, 0, 0.7)),
+        url("your-background.jpg") center/cover no-repeat;
+      z-index: -1;
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: yellow;
+    }
+
+    .page-wrap {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* MAIN IMAGE PANEL */
+    .image-panel {
+      position: relative;
+      width: 100%;
+      min-height: 700px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.3);
+      background:
+        url("your-main-image.jpg") center/cover no-repeat;
+    }
+
+    /* TITLE */
+    .title {
+      position: absolute;
+      top: 25px;
+      left: 30px;
+      font-size: 2.5rem;
+      color: yellow;
+      text-shadow: 0 0 10px rgba(0,0,0,0.9);
+    }
+
+    /* DESCRIPTION */
+    .description {
+      position: absolute;
+      bottom: 25px;
+      right: 30px;
+      max-width: 400px;
+      text-align: right;
+      line-height: 1.6;
+      text-shadow: 0 0 10px rgba(0,0,0,0.9);
+    }
+
+    /* EXTRA IMAGES */
+    .extra-img {
+      position: absolute;
+      width: 220px;
+      height: 160px;
+      object-fit: cover;
+      border: 3px solid red;
+      border-radius: 10px;
+    }
+
+    /* POSITIONING THE 2 IMAGES */
+    .img1 {
+      top: 120px;
+      left: 40px;
+    }
+
+    .img2 {
+      top: 320px;
+      left: 80px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .image-panel {
+        min-height: 600px;
+      }
+
+      .extra-img {
+        position: static;
+        display: block;
+        margin: 15px auto;
+        width: 90%;
+        height: auto;
+      }
+
+      .description {
+        left: 20px;
+        right: 20px;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+  <div class="image-panel">
+
+    <div class="title">Virtual Space</div>
+
+    <!-- EXTRA IMAGES -->
+    <img src="extra1.jpg" class="extra-img img1">
+    <img src="extra2.jpg" class="extra-img img2">
+
+    <!-- TEXT -->
+    <div class="description">
+      <p>
+        This project explores the creation of a digital environment using 3D tools.
+        I designed a virtual space that reflects my aesthetic and creative interests.
+      </p>
+
+      <p>
+        Tools used: Blender, Unity, etc.
+      </p>
+
+      <p>
+        Concept: Explain your idea and what this space represents.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
