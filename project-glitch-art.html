@@ -33,5 +33,92 @@
 
     /* GLASS CONTAINER */
     .glass-container {
-      max-width: 1200px;
-      margin:
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      color: yellow;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    /* IMAGE ROW */
+    .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: nowrap; /* force one row */
+      overflow-x: auto;  /* prevents breaking if images are huge */
+      padding-bottom: 10px;
+    }
+
+    .image-row img {
+      height: auto;     /* keeps original proportions */
+      width: auto;
+      max-height: 350px; /* optional limit so they don’t get insane */
+      border: 3px solid red;
+      border-radius: 10px;
+      flex-shrink: 0; /* prevents squishing */
+      transition: 0.3s;
+    }
+
+    .image-row img:hover {
+      transform: scale(1.05);
+      border-color: yellow;
+    }
+
+    /* TEXT */
+    .text-section {
+      max-width: 900px;
+      margin: 40px auto 0;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="glass-container">
+
+  <a href="index.html">← Back to Portfolio</a>
+
+  <h1>Glitch Art</h1>
+
+  <!-- IMAGES -->
+  <div class="image-row">
+    <img src="glitch1.jpg" alt="Glitch 1">
+    <img src="glitch2.jpg" alt="Glitch 2">
+    <img src="glitch3.jpg" alt="Glitch 3">
+    <img src="glitch4.jpg" alt="Glitch 4">
+  </div>
+
+  <!-- TEXT -->
+  <div class="text-section">
+    <p>
+      This glitch art project explores distortion, digital error, and abstraction.
+      By manipulating images through software and intentional corruption, I created
+      visuals that reflect the unpredictable nature of digital media.
+    </p>
+
+    <p>
+      Tools used: (add your tools here)
+    </p>
+
+    <p>
+      Concept: Explain your idea, process, and inspiration here.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
