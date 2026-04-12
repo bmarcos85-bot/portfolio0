@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Net Art</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(20,0,0,0.9));
+    }
+
+    a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: yellow;
+    }
+
+    /* GLASS CONTAINER */
+    .glass-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      color: yellow;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* TEXT */
+    .text-box {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* IMAGE GRID */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    /* IMAGES */
+    .image-grid img {
+      width: 100%;
+      max-width: 220px;
+      height: 160px;
+      object-fit: contain; /* keeps full image */
+      background: black;
+      border: 3px solid red;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+      border-color: yellow;
+    }
+
+    @media (max-width: 900px) {
+      .image-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-grid img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="glass-container">
+
+  <a href="index.html">← Back to Portfolio</a>
+
+  <h1>Net Art</h1>
+
+  <!-- TEXT -->
+  <div class="text-box">
+    <p>
+      This net art project explores how art exists and interacts within the internet space.
+      I experimented with digital layouts, visuals, and interactivity to create something
+      that feels native to the web rather than traditional media.
+    </p>
+
+    <p>
+      Tools used: (HTML, CSS, etc.)
+    </p>
+
+    <p>
+      Concept: Explain your idea and how it connects to internet culture.
+    </p>
+  </div>
+
+  <!-- 4 IMAGES -->
+  <div class="image-grid">
+    <img src="net1.jpg">
+    <img src="net2.jpg">
+    <img src="net3.jpg">
+    <img src="net4.jpg">
+  </div>
+
+</div>
+
+</body>
+</html>
