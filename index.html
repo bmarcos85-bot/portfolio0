@@ -1,1 +1,328 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
+    body {
+      color: white;
+      background: #000;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background image */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(20, 0, 0, 0.8)),
+        url("your-background-image.jpg") center/cover no-repeat;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 0, 0, 0.08), rgba(255, 204, 0, 0.06));
+      z-index: -1;
+    }
+
+    nav {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      border-bottom: 2px solid #ff0000;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 24px;
+    }
+
+    .nav-logo {
+      color: #ffcc00;
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: #ffcc00;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #ffffff;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .projects {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .projects h2 {
+      text-align: center;
+      color: #ff0000;
+      font-size: 2.2rem;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: rgba(20, 20, 20, 0.92);
+      border: 2px solid #ff0000;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: #ffcc00;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-card h3 {
+      padding: 18px;
+      text-align: center;
+      color: #ffcc00;
+      font-size: 1.1rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: #111;
+      border: 2px solid #ff0000;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 700px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
+      animation: fadeIn 0.25s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-text {
+      padding: 24px;
+    }
+
+    .modal-text h3 {
+      color: #ffcc00;
+      margin-bottom: 12px;
+      font-size: 1.7rem;
+    }
+
+    .modal-text p {
+      color: #f3f3f3;
+      line-height: 1.6;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 2100;
+    }
+
+    .close-btn:hover {
+      color: #ffcc00;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .modal-content img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">My Portfolio</div>
+      <ul class="nav-links">
+        <li><a href="#">Digital Media</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Portfolio</h1>
+    <!-- Change the subtitle text below -->
+    <p>Put your subtitle here. You can describe yourself, your creative style, or your work in digital media.</p>
+  </section>
+
+  <section class="projects">
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card" onclick="openModal('Logo', 'logo-project.jpg', 'This is where you can describe your Logo project.')">
+        <img src="logo-project.jpg" alt="Logo Project">
+        <h3>Logo</h3>
+      </div>
+
+      <div class="project-card" onclick="openModal('Glitch Art', 'glitch-art.jpg', 'This is where you can describe your Glitch Art project.')">
+        <img src="glitch-art.jpg" alt="Glitch Art Project">
+        <h3>Glitch Art</h3>
+      </div>
+
+      <div class="project-card" onclick="openModal('Meme Mashup', 'meme-mashup.jpg', 'This is where you can describe your Meme Mashup project.')">
+        <img src="meme-mashup.jpg" alt="Meme Mashup Project">
+        <h3>Meme Mashup</h3>
+      </div>
+
+      <div class="project-card" onclick="openModal('Virtual Space', 'virtual-space.jpg', 'This is where you can describe your Virtual Space project.')">
+        <img src="virtual-space.jpg" alt="Virtual Space Project">
+        <h3>Virtual Space</h3>
+      </div>
+
+      <div class="project-card" onclick="openModal('Net Art', 'net-art.jpg', 'This is where you can describe your Net Art project.')">
+        <img src="net-art.jpg" alt="Net Art Project">
+        <h3>Net Art</h3>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="projectModal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Project Image">
+      <div class="modal-text">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, image, description) {
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalImage").src = image;
+      document.getElementById("modalDescription").textContent = description;
+      document.getElementById("projectModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("projectModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("projectModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
+
+</body>
+</html>
