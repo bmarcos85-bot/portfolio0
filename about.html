@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
-      color: white;
     }
 
-    /* BACKGROUND IMAGE */
+    body {
+      color: white;
+      background: #000;
+      min-height: 100vh;
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -22,17 +29,70 @@
       z-index: -1;
     }
 
-    a {
-      color: red;
+    nav {
+      background: rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ff0000;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
 
-    a:hover {
-      color: yellow;
+    .nav-links li a:hover {
+      color: #ffcc00;
     }
 
-    /* GLASS CONTAINER */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     .glass-container {
       max-width: 900px;
       margin: 60px auto;
@@ -49,7 +109,6 @@
       margin-bottom: 20px;
     }
 
-    /* PROFILE IMAGE */
     .profile-img {
       width: 180px;
       height: 180px;
@@ -59,51 +118,60 @@
       margin-bottom: 20px;
     }
 
-    /* TEXT */
     .about-text {
       line-height: 1.7;
       font-size: 1.1rem;
       max-width: 600px;
       margin: auto;
     }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 20px;
-    }
   </style>
 </head>
 
 <body>
 
-<div class="glass-container">
+  <nav>
+    <div class="logo">Portfolio</div>
 
-  <a href="index.html" class="back-link">← Back to Portfolio</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Digital Media</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="contact.html">Contact Me</a></li>
+    </ul>
 
-  <h1>About Me</h1>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+  </nav>
 
-  <!-- YOUR IMAGE -->
-  <img src="your-photo.jpg" class="profile-img" alt="Profile">
+  <div class="glass-container">
+    <h1>About Me</h1>
 
-  <!-- YOUR TEXT -->
-  <div class="about-text">
-    <p>
-      Hi, I’m [Your Name]. I’m a digital media artist focused on creative expression
-      through design, digital manipulation, and visual storytelling.
-    </p>
+    <img src="your-photo.jpg" class="profile-img" alt="Profile">
 
-    <p>
-      My work explores themes of identity, internet culture, and digital aesthetics.
-      I enjoy experimenting with different tools and styles to create unique and
-      engaging visuals.
-    </p>
+    <div class="about-text">
+      <p>
+        Hi, I’m [Your Name]. I’m a digital media artist focused on creative expression
+        through design, digital manipulation, and visual storytelling.
+      </p>
 
-    <p>
-      Tools I use: Photoshop, Illustrator, Blender, HTML/CSS (edit this)
-    </p>
+      <p>
+        My work explores themes of identity, internet culture, and digital aesthetics.
+        I enjoy experimenting with different tools and styles to create unique and
+        engaging visuals.
+      </p>
+
+      <p>
+        Tools I use: Photoshop, Illustrator, Blender, HTML/CSS
+      </p>
+    </div>
   </div>
 
-</div>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 
 </body>
 </html>
