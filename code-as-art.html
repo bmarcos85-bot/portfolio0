@@ -125,12 +125,44 @@
       font-size: 1.1rem;
     }
 
+    /* Adjusted Art Display Styling */
     .art-display {
       border: 2px solid red;
       border-radius: 10px;
       background: rgba(0, 0, 0, 0.6);
       padding: 25px;
       margin-bottom: 30px;
+      max-width: 800px; /* Reduced max-width for better composition */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .art-image-container {
+      position: relative; /* For absolutely positioning the text box */
+      width: 100%;
+      height: auto;
+      overflow: hidden; /* Prevent text overflow */
+      margin-bottom: 15px; /* Spacing below the image/text */
+    }
+
+    .art-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* Preserve aspect ratio, show full image */
+      border-radius: 5px; /* Match outer box corner rounding */
+    }
+
+    .artwork-explanation {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      max-width: 70%; /* Limit text width within the image */
+      opacity: 0.85; /* Slight transparency for style */
     }
 
     .code-block {
@@ -167,6 +199,10 @@
 
   <section class="art-display">
     <h2>Algorithmic Generative Art</h2>
+    <div class="art-image-container">
+      <img src="YOUR_IMAGE_HERE.jpg" alt="Artwork Description" class="art-image">
+      <div class="artwork-explanation">This image explores the intersection of code and visuals, showcasing the beautiful complexity generated from algorithmic rules. Add your explanation here.</div>
+    </div>
     <p style="margin: 10px 0; color: #aaa;">Below is a live snippet of an interpretive geometry routine.</p>
     <pre class="code-block"><code>function drawDynamicGrid() {
   for (let x = 0; x < width; x += 20) {
@@ -189,4 +225,3 @@
 
 </body>
 </html>
-    
