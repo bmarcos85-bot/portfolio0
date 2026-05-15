@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glitch Hub-Final - Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      color: white;
+      background: #000;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(15,0,0,0.9)),
+      url("IMG_0221.JPG") center/cover no-repeat;
+      z-index: -1;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ff0000;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* MOBILE NAVIGATION */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* MAIN CONTENT CONTAINER */
+    .content-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .back-btn {
+      display: inline-block;
+      color: #ffcc00;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      color: white;
+    }
+
+    .project-header h1 {
+      color: #ff0000;
+      text-shadow: 1px 1px yellow;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .project-header p {
+      color: #aaa;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    /* MAIN CENTER BOX */
+    .center-showcase-box {
+      border: 2px solid #ff0000;
+      border-radius: 10px;
+      background: rgba(10, 5, 5, 0.85);
+      padding: 30px;
+      margin: 0 auto 30px auto;
+      max-width: 850px;
+    }
+
+    /* 4-IMAGE GRID INSIDE THE BOX */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .showcase-grid img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border: 1px solid #ffcc00;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .showcase-grid img:hover {
+      border-color: #ff0000;
+      transform: scale(1.02);
+    }
+
+    /* BOTTOM TEXT EXPLANATION BOX */
+    .explanation-box {
+      border: 1px dashed #ffcc00;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .explanation-box h3 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Portfolio</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Digital Media</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+  </ul>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+
+<main class="content-container">
+  <a href="index.html" class="back-btn">&larr; Return to Central Directory</a>
+  
+  <section class="project-header">
+    <h1>Glitch Hub-Final</h1>
+    <p>System compilation archive of compressed artifacts and broken pixel structures.</p>
+  </section>
+
+  <div class="center-showcase-box">
+    <div class="showcase-grid">
+      <img src="GLITCH_IMAGE_1.jpg" alt="Glitch Webpage View 1">
+      <img src="GLITCH_IMAGE_2.jpg" alt="Glitch Webpage View 2">
+      <img src="GLITCH_IMAGE_3.jpg" alt="Glitch Webpage View 3">
+      <img src="GLITCH_IMAGE_4.jpg" alt="Glitch Webpage View 4">
+    </div>
+  </div>
+
+  <div class="explanation-box">
+    <h3>PROJECT DESCRIPTION</h3>
+    <p>This workspace serves as the final compilation destination for the Glitch Hub interface. The gallery above highlights the breakdown of digital design rules, incorporating compression style choices, visual fragments, and a retro-cyber punk framework. Replace the text here with your own specific breakdown of how this webpage was built and designed.</p>
+  </div>
+</main>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
