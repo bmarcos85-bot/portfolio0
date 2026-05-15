@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code As Art - Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      color: white;
+      background: #000;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(20,0,0,0.85)),
+      url("IMG_0221.JPG") center/cover no-repeat;
+      z-index: -1;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: rgba(0,0,0,0.9);
+      border-bottom: 2px solid #ff0000;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* MOBILE NAVIGATION */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.95);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* MAIN CONTENT */
+    .content-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      color: #ffcc00;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      color: white;
+    }
+
+    .project-header h1 {
+      color: #ffcc00;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .project-header p {
+      color: #ccc;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    .art-display {
+      border: 2px solid red;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+
+    .code-block {
+      background: #111;
+      border: 1px solid #333;
+      padding: 15px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ffcc;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Portfolio</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Digital Media</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="contact.html">Contact Me</a></li>
+  </ul>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+
+<main class="content-container">
+  <a href="index.html" class="back-btn">&larr; Back to Gallery</a>
+  
+  <section class="project-header">
+    <h1>Code As Art</h1>
+    <p>Exploring the visual beauty and algorithmic structures hidden within raw development environments.</p>
+  </section>
+
+  <section class="art-display">
+    <h2>Algorithmic Generative Art</h2>
+    <p style="margin: 10px 0; color: #aaa;">Below is a live snippet of an interpretive geometry routine.</p>
+    <pre class="code-block"><code>function drawDynamicGrid() {
+  for (let x = 0; x < width; x += 20) {
+    let noiseVal = noise(x * 0.005, frameCount * 0.01);
+    stroke(noiseVal * 255, 100, 150);
+    line(x, 0, x, height * noiseVal);
+  }
+}</code></pre>
+  </section>
+</main>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
+    
